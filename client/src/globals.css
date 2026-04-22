@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --radius: 0.625rem;
+  --background: #ffffff;
+  --foreground: #0a0a1a;
+  --card: #ffffff;
+  --card-foreground: #0a0a1a;
+  --primary: #0a0a1a;
+  --primary-foreground: #fafafa;
+  --secondary: #f4f4f8;
+  --secondary-foreground: #0a0a1a;
+  --muted: #f4f4f8;
+  --muted-foreground: #6b7280;
+  --accent: #f4f4f8;
+  --accent-foreground: #0a0a1a;
+  --destructive: #ef4444;
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: #9ca3af;
+}
+
+.dark {
+  --background: #050505;
+  --foreground: #fafafa;
+  --card: #141414;
+  --card-foreground: #fafafa;
+  --primary: #e5e7eb;
+  --primary-foreground: #141414;
+  --secondary: #212328;
+  --secondary-foreground: #fafafa;
+  --muted: #212328;
+  --muted-foreground: #9095a1;
+  --accent: #212328;
+  --accent-foreground: #fafafa;
+  --destructive: #ff495b;
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.15);
+  --ring: #6b7280;
+}
+
+@layer base {
+  * {
+    @apply border-[#30333A];
+  }
+  body {
+    @apply bg-[#050505] text-white;
+  }
+}
+
+@layer utilities {
+  .container {
+    @apply mx-auto max-w-screen-2xl px-4 md:px-6 lg:px-8;
+  }
+  .yellow-btn {
+    @apply h-12 cursor-pointer bg-[#FDD458] hover:bg-[#E8BA40] text-gray-950 font-medium text-base rounded-lg shadow-lg disabled:opacity-50;
+  }
+  .home-wrapper {
+    @apply text-[#CCDADC] flex-col gap-4 md:gap-10 items-center sm:items-start;
+  }
+  .home-section {
+    @apply w-full gap-8 grid-cols-1 md:grid-cols-2 xl:grid-cols-3;
+  }
+  .header {
+    @apply z-50 w-full h-[70px] bg-[#141414];
+  }
+  .header-wrapper {
+    @apply flex justify-between items-center px-6 py-4 text-[#9095A1];
+  }
+  .form-title {
+    @apply text-4xl font-bold text-[#CCDADC] mb-10;
+  }
+  .form-label {
+    @apply text-sm font-medium text-[#CCDADC];
+  }
+  .form-input {
+    @apply h-12 px-3 py-3 text-white text-base placeholder:text-[#9095A1] border border-[#30333A] bg-[#141414] rounded-lg focus:outline-none focus:border-[#E8BA40];
+  }
+  .footer-link {
+    @apply text-[#CCDADC] font-medium hover:text-[#FDD458] hover:underline transition-colors;
+  }
+  .search-btn {
+    @apply cursor-pointer px-4 py-2 w-fit flex items-center gap-2 text-sm md:text-base bg-[#E8BA40] hover:bg-[#FDD458] text-black font-medium rounded;
+  }
+  .empty-title {
+    @apply text-xl font-semibold text-[#CCDADC] mb-2;
+  }
+  .empty-description {
+    @apply text-[#9095A1] mb-6 max-w-md;
+  }
+  .news-item {
+    @apply bg-[#141414] rounded-lg border w-full border-[#30333A] p-4 duration-200 hover:border-[#9095A1] cursor-pointer;
+  }
+  .news-title {
+    @apply text-lg font-semibold text-white leading-tight mb-3 line-clamp-2;
+  }
+  .news-meta {
+    @apply flex items-center text-sm text-[#9095A1] mb-1;
+  }
+  .news-summary {
+    @apply text-[#CCDADC] flex-1 text-base leading-relaxed mb-3 line-clamp-3;
+  }
+  .news-cta {
+    @apply text-sm align-bottom text-[#E8BA40] hover:text-[#CCDADC];
+  }
+  .watchlist-btn {
+    @apply bg-[#E8BA40] text-base hover:bg-[#FDD458] text-gray-900 w-full rounded h-11 font-semibold cursor-pointer;
+  }
+  .add-alert {
+    @apply flex text-sm items-center whitespace-nowrap gap-1.5 px-3 w-fit py-2 text-[#E8BA40] border border-[#E8BA40] border-opacity-20 rounded font-medium bg-transparent hover:bg-transparent cursor-pointer transition-colors;
+  }
+  .alert-item {
+    @apply p-4 rounded-lg bg-[#212328] border border-[#30333A];
+  }
+  .alert-name {
+    @apply mb-2 text-lg text-[#E8BA40] font-semibold;
+  }
+  .table-row {
+    @apply border-b cursor-pointer text-white border-[#30333A] hover:bg-[#212328] transition-colors;
+  }
+  .table-cell {
+    @apply font-medium text-base;
+  }
+}
+
+/* Scrollbar hide */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Custom scrollbar on hover */
+.scrollbar-hide-default {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+.scrollbar-hide-default::-webkit-scrollbar {
+  width: 8px;
+}
+.scrollbar-hide-default::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollbar-hide-default::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+.scrollbar-hide-default:hover {
+  scrollbar-color: #30333a transparent;
+}
+.scrollbar-hide-default:hover::-webkit-scrollbar-thumb {
+  background-color: #30333a;
+}
+.scrollbar-hide-default::-webkit-scrollbar-thumb:hover {
+  background-color: #9095a1;
+}
